@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinter Suduko</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        hr{
+            width: 500px;
+        }
+
+        #errors{
+            color: coral;
+        }
+
+        #board{
+            width: 450px;
+            height: 450px;
+            background-color: yellow;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tile{
+            width: 48px;
+            height: 48px;
+            border: 1px solid lightgray;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #digits{
+            width: 450px;
+            height: 50px;
+            background-color: yellow;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .number{
+            width: 48px;
+            height: 48px;
+            border: 1px solid black;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Vinter Suduko</h1>
+    <hr>
+    <h2 id="errors">0</h2>
+
+    <div id="board"></div> 
+    <br>
+    <div id="digits"></div>
+
+    <script>
+        var numSelected = null;
+        var tileSelected = null;
+
+        var errors = 0;
+
+        var board = [
+            "--74916-5",
+            "2---6-3-9",
+            "-----7-1-",
+            "-586----4",
+            "--3----9-",
+            "--62--187",
+            "9-4-7---2",
+            "67-83----",
+            "81--45---"
+        ]
+
+        var solution = [
+            "387491625",
+            "241568379",
+            "569327418",
+            "758619234",
+            "123784596",
+            "496253187",
+            "934176852",
+            "675832941",
+            "812945763"
+        ]
+
+        window.onload = function() {
+            
+        }
+
+    </script>
+    
+</body>
+</html>
