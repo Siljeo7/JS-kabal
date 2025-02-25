@@ -1,7 +1,9 @@
-const numSelected = null;
-const tileSelected = null;
-const errors = 5;
-const gameOver = false;
+let numSelected = null;
+let tileSelected = null;
+let errors = 5;
+let gameOver = false;
+let timer; /* variabel for å holde styr på tiden*/
+let time = 0; /* variabel for å holde styr på brukt tid*/
 
 const board = [
     "--74916-5",
@@ -30,10 +32,13 @@ const solution = [
 window.onload = function () {
     document.getElementById("error-count").innerText = errors;
     setGame();
+    startTimer(); 
 }
 
 function setGame() {
+    /*Tall fra 1-9*/
     for (let i = 1; i <= 9; i++) {
+        /*<div id="1" class="number">1</div>*/
         let number = document.createElement("div");
         number.id = i;
         number.innerText = i;
@@ -42,6 +47,7 @@ function setGame() {
         document.getElementById("digits").appendChild(number);
     }
 
+    /*brett 9x9*/
     for (let r = 0; r < 9; r++) {
         for (let c = 0; c < 9; c++) {
             let tile = document.createElement("div");
@@ -76,12 +82,14 @@ function selectTile() {
     if (gameOver || !numSelected) return;
     if (this.innerText != "") return;
 
-    let coords = this.id.split("-");
+    /* "0-0" "0-1"... "3-1"*/
+    let coords = this.id.split("-"); /* [™0™, ™0™] */
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
 
     if (solution[r][c] == numSelected.id) {
         this.innerText = numSelected.id;
+        checkWin(); 
     } else {
         errors -= 1;
         document.getElementById("error-count").innerText = errors;
@@ -93,7 +101,38 @@ function selectTile() {
     }
 }
 
+/*fryser spillet*/ 
 function disableGame() {
     document.querySelectorAll(".tile").forEach(tile => tile.removeEventListener("click", selectTile));
     document.querySelectorAll(".number").forEach(number => number.removeEventListener("click", selectNumber));
+    clearInterval(timer); // stopper tiden når spillet er avslutta
+}
+
+
+function startTimer() {
+    timer = setInterval(updateTimer, 1000);
+}
+
+/*oppdaterer tiden*/
+function updateTimer() {
+    time++;
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    if (seconds < 10) seconds = "0" + seconds;
+    document.getElementById("timer").innerText = minutes + ":" + seconds;
+}
+
+
+function checkWin() {
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            let tile = document.getElementById(r.toString() + "-" + c.toString());
+            if (tile.innerText != solution[r][c]) {
+                return;
+            }
+        }
+    }
+    gameOver = true;
+    document.getElementById("errors").innerText = "Du vant!";
+    disableGame();
 }

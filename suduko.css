@@ -66,3 +66,10 @@ hr {
 .vertical-line {
     border-right: 1px solid black;
 }
+
+#timer-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 13px;
+}
