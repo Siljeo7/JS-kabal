@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinter Suduko</title>
+    <title>Påske Suduko</title>
     <link rel="stylesheet" href="suduko.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
         body {
             display: flex;
             flex-direction: column;
@@ -14,6 +16,9 @@
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            background-image: url(https://s1.1zoom.me/big0/215/Holidays_Easter_Daffodils_White_background_Eggs_519677_1280x853.jpg);
+            background-size: cover;
+            background-position: center;
         }
         .button-container {
             display: flex;
@@ -22,15 +27,29 @@
         button {
             padding: 20px 40px;
             font-size: 1.5rem;
+            transition: background-color 0.3s, transform 0.3s;
+            background-color: #fff3c2;
+            border: 1px solid #ffdb4b;
+            color: #ffcc00;
+
+        }
+
+        button:hover {
+            background-color: #ffe57c;
+            transform: scale(1.1);
         }
         h1 {
-            margin-bottom: 20px;
-            font-size: 2.5rem;
+            font-size: 6.5rem;
+            font-family: "Sigmar", serif;
+            color: #ffe57c;
+            margin-top: -80px;
+            margin-bottom: 80px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-    <h1>Vinter Suduko</h1>
+    <h1>Påske Suduko</h1>
     <div class="button-container">
         <div>
             <a href="suduko_lett.html">
