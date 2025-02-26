@@ -5,6 +5,7 @@ body {
 
 hr {
     width: 500px;
+    border: 0.1px solid black;
 }
 
 #errors {
@@ -29,6 +30,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(254, 255, 235);
 }
 
 #digits {
@@ -49,14 +51,15 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(254, 255, 235);
 }
 
 .number-selected {
-    background-color: gray;
+    background-color: rgb(245, 247, 162);
 }
 
 .tile-start {
-    background-color: whitesmoke;
+    background-color: rgb(253, 255, 199);
 }
 
 .horizontal-line {
@@ -73,3 +76,64 @@ hr {
     right: 30px;
     font-size: 13px;
 }
+
+.tilb{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 13px;
+    padding: 10px 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    background-color: #fefbd0;
+    border: 1px solid #fcf113;
+    border-radius: 10px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.tilb:hover{
+    background-color: #fef7b6;
+    transform: scale(1.05);
+}
+
+img{
+    width: 125px; 
+    height: auto;
+}
+
+.egg1{
+    rotate: 5deg;
+    position: absolute;
+    top: 35%;
+    right: 190px;
+}
+
+.egg2{
+    rotate: -15deg;
+    position: absolute;
+    top: 45%;
+    right: 240px;
+}
+
+.egg3{
+    rotate: 15deg;
+    position: absolute;
+    top: 48%;
+    right: 140px;
+}
+
+.kurv{
+    rotate: -5deg;
+    position: absolute;
+    top: 40%;
+    left: 100px;
+}
+
+.hare{
+    rotate: -45deg;
+    position: absolute;
+    top: 75px;
+    left: 360px;
+    z-index: -1;
+}
+
