@@ -137,3 +137,21 @@ img{
     z-index: -1;
 }
 
+.retry-button{
+    position: absolute;
+    top: 97px;
+    left: 58%;
+    font-size: 15px;
+    padding: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    background-color: rgb(214, 235, 196);
+    border: 1px solid rgb(182, 208, 159);
+    border-radius: 10px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.retry-button:hover{
+    background-color: rgb(182, 208, 159);
+    transform: scale(1.05);
+}
